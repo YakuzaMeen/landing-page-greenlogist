@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenlogist - Logística Sostenible</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .language-switcher {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+    .language-switcher button {
+      margin: 0 0.25rem;
+      padding: 0.4rem 0.8rem;
+      background-color: #2E7D32;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .language-switcher button:hover {
+      background-color: #256428;
+    }
+  </style>
+  <script>
+    function changeLanguage(lang) {
+      const elements = document.querySelectorAll('[data-es], [data-en]');
+      elements.forEach(el => {
+        el.innerText = el.getAttribute(`data-${lang}`);
+      });
+    }
+  </script>
+</head>
+<body>
+  <div class="language-switcher">
+    <button onclick="changeLanguage('es')">ES</button>
+    <button onclick="changeLanguage('en')">EN</button>
+  </div>
+
+  <header>
+    <h1 data-es="Greenlogist" data-en="Greenlogist">Greenlogist</h1>
+    <nav>
+      <a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a>
+      <a href="#caracteristicas" data-es="Características" data-en="Features">Características</a>
+      <a href="#planes" data-es="Planes" data-en="Plans">Planes</a>
+      <a href="#be-greenlogist" data-es="Be Greenlogist" data-en="Be Greenlogist">Be Greenlogist</a>
+      <a href="#nosotros" data-es="Nosotros" data-en="About Us">Nosotros</a>
+      <a href="#como-funciona" data-es="Cómo Funciona" data-en="How It Works">Cómo Funciona</a>
+      <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <h2 data-es="Logística sostenible para productos orgánicos" data-en="Sustainable logistics for organic products">Logística sostenible para productos orgánicos</h2>
+    <p data-es="Conectamos a agricultores locales con negocios responsables a través de una plataforma tecnológica eficiente y ecológica." data-en="We connect local farmers with responsible businesses through an efficient and eco-friendly technology platform.">Conectamos a agricultores locales con negocios responsables a través de una plataforma tecnológica eficiente y ecológica.</p>
+    <button class="btn" data-es="Quiero Saber Más" data-en="Learn More">Quiero Saber Más</button>
+  </section>
+
+  <!-- Mover las secciones "¿Qué es Greenlogist?" y "¿Cómo funciona?" antes de Características -->
+  <section id="nosotros">
+    <h2 data-es="¿Qué es Greenlogist?" data-en="What is Greenlogist?">¿Qué es Greenlogist?</h2>
+    <p data-es="Greenlogist es una startup tecnológica dedicada a mejorar la eficiencia y sostenibilidad de la distribución de productos orgánicos en el Perú. Nuestra empresa ofrece una plataforma innovadora diseñada para optimizar el transporte entre pequeños agricultores locales y negocios como mercados, tiendas saludables y restaurantes eco-amigables." data-en="Greenlogist is a technology startup dedicated to improving the efficiency and sustainability of organic product distribution in Peru. Our company offers an innovative platform designed to optimize transportation between small local farmers and businesses such as markets, health stores, and eco-friendly restaurants.">Greenlogist es una startup tecnológica dedicada a mejorar la eficiencia y sostenibilidad de la distribución de productos orgánicos en el Perú. Nuestra empresa ofrece una plataforma innovadora diseñada para optimizar el transporte entre pequeños agricultores locales y negocios como mercados, tiendas saludables y restaurantes eco-amigables.</p>
+  </section>
+
+  <section id="como-funciona">
+    <h2 data-es="¿Cómo funciona?" data-en="How does it work?">¿Cómo funciona?</h2>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🌾</div>
+        <h3 data-es="Registro de agricultores" data-en="Farmer Registration">Registro de agricultores</h3>
+        <p data-es="A través de un formulario sencillo y rápido..." data-en="Through a simple and quick form...">A través de un formulario sencillo y rápido...</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🚚</div>
+        <h3 data-es="Logística optimizada" data-en="Optimized Logistics">Logística optimizada</h3>
+        <p data-es="Una vez ingresados los productos y destinos..." data-en="Once the products and destinations are entered...">Una vez ingresados los productos y destinos...</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📍</div>
+        <h3 data-es="Entrega y seguimiento" data-en="Delivery and Tracking">Entrega y seguimiento</h3>
+        <p data-es="Los negocios pueden seguir sus pedidos en tiempo real..." data-en="Businesses can track their orders in real-time...">Los negocios pueden seguir sus pedidos en tiempo real...</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="caracteristicas">
+    <h2 data-es="Características" data-en="Features">Características</h2>
+    <ul>
+      <li data-es="Plataforma digital intuitiva y accesible desde cualquier dispositivo." data-en="Intuitive digital platform accessible from any device.">Plataforma digital intuitiva y accesible desde cualquier dispositivo.</li>
+      <li data-es="Optimización de rutas en tiempo real para minimizar el impacto ambiental." data-en="Real-time route optimization to minimize environmental impact.">Optimización de rutas en tiempo real para minimizar el impacto ambiental.</li>
+      <li data-es="Seguimiento completo del pedido para agricultores y clientes." data-en="Full order tracking for farmers and customers.">Seguimiento completo del pedido para agricultores y clientes.</li>
+      <li data-es="Transparencia total en toda la cadena logística." data-en="Full transparency throughout the logistics chain.">Transparencia total en toda la cadena logística.</li>
+    </ul>
+  </section>
+
+  <section id="planes">
+    <h2 data-es="Planes" data-en="Plans">Planes</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3 data-es="Plan Básico" data-en="Basic Plan">Plan Básico</h3>
+        <p data-es="Ideal para agricultores que recién comienzan a distribuir sus productos." data-en="Ideal for farmers just starting to distribute their products.">Ideal para agricultores que recién comienzan a distribuir sus productos.</p>
+        <p class="price" data-es="$5 USD/mes" data-en="$5 USD/month">$5 USD/mes</p>
+      </div>
+      <div class="plan">
+        <h3 data-es="Plan Profesional" data-en="Professional Plan">Plan Profesional</h3>
+        <p data-es="Perfecto para negocios que requieren entregas programadas y seguimiento detallado." data-en="Perfect for businesses that need scheduled deliveries and detailed tracking.">Perfecto para negocios que requieren entregas programadas y seguimiento detallado.</p>
+        <p class="price" data-es="$10 USD/mes" data-en="$10 USD/month">$10 USD/mes</p>
+      </div>
+      <div class="plan">
+        <h3 data-es="Plan Corporativo" data-en="Corporate Plan">Plan Corporativo</h3>
+        <p data-es="Para grandes cadenas de distribución comprometidas con la sostenibilidad." data-en="For large distribution chains committed to sustainability.">Para grandes cadenas de distribución comprometidas con la sostenibilidad.</p>
+        <p class="price" data-es="$15 USD/mes" data-en="$15 USD/month">$15 USD/mes</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="be-greenlogist">
+    <h2 data-es="Sé parte de Greenlogist" data-en="Be part of Greenlogist">Sé parte de Greenlogist</h2>
+    <p data-es="Únete a nuestra comunidad de agricultores, transportistas y negocios sostenibles." data-en="Join our community of farmers, transporters, and sustainable businesses.">Únete a nuestra comunidad de agricultores, transportistas y negocios sostenibles.</p>
+    
+        <!-- Formulario -->
+        <form id="signup-form" action="#" method="POST">
+          <div class="form-group">
+            <label for="name" data-es="Nombre" data-en="Name">Nombre</label>
+            <input type="text" id="name" name="name" required placeholder="Ingresa tu nombre" data-es="Ingresa tu nombre" data-en="Enter your name">
+          </div>
+          <div class="form-group">
+            <label for="email" data-es="Correo electrónico" data-en="Email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required placeholder="Ingresa tu correo electrónico" data-es="Ingresa tu correo electrónico" data-en="Enter your email">
+          </div>
+          <div class="form-group">
+            <label for="phone" data-es="Teléfono" data-en="Phone">Teléfono</label>
+            <input type="tel" id="phone" name="phone" required placeholder="Ingresa tu número de teléfono" data-es="Ingresa tu número de teléfono" data-en="Enter your phone number">
+          </div>
+          <div class="form-group">
+            <label for="message" data-es="Mensaje" data-en="Message">Mensaje</label>
+            <textarea id="message" name="message" required placeholder="Escribe un mensaje" data-es="Escribe un mensaje" data-en="Write a message"></textarea>
+          </div>
+          <button type="submit" class="btn" data-es="Registrarme" data-en="Sign Up">Registrarme</button>
+        </form>
+      </section>
+
+  <section id="contacto">
+    <h2 data-es="Contacto" data-en="Contact">Contacto</h2>
+    <p data-es="¿Quieres ser parte de la revolución verde?..." data-en="Do you want to be part of the green revolution?...">¿Quieres ser parte de la revolución verde?...</p>
+    <p data-es="Escríbenos a" data-en="Write to us at">Escríbenos a</p>
+    <a href="mailto:contacto@greenlogist.pe">contacto@greenlogist.pe</a>
+    
+<!-- Botones flotantes de redes sociales -->
+<div class="social-buttons">
+  <a href="https://www.facebook.com/Greenlogist" target="_blank" class="social-btn facebook" title="Facebook">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+  </a>
+  <a href="https://x.com/tuusuario" target="_blank" class="social-btn">
+    <img src="https://abs.twimg.com/favicons/twitter.2.ico" alt="X" width="20" height="20" />
+  </a>
+  <a href="https://www.instagram.com/Greenlogist" target="_blank" class="social-btn instagram" title="Instagram">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+  </a>
+</div>
+
+  <footer>
+    <p data-es="© 2025 Greenlogist - Todos los derechos reservados" data-en="© 2025 Greenlogist - All rights reserved">© 2025 Greenlogist - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>

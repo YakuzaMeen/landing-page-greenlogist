@@ -1,0 +1,264 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #F5F5DC;
+  color: #212121;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: #212121;
+}
+
+header {
+  background-color: #4CAF50;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.75rem;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #E0E0E0;
+}
+
+.btn {
+  background-color: #2E7D32;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn:hover {
+  background-color: #256428;
+}
+
+section {
+  padding: 3rem 2rem;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.plans {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-around;
+}
+
+.plan {
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 2rem;
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+}
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4CAF50;
+  margin-top: 1rem;
+}
+
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+}
+
+input[type="email"], input[type="text"], input[type="tel"], textarea {
+  margin-bottom: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button[type="submit"] {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: #2E7D32;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #256428;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-around;
+}
+
+.feature {
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 2rem;
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.social-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-btn {
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+.social-btn:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-btn.facebook:hover {
+  background-color: #3b5998;
+}
+
+.social-btn.twitter {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para el botón */
+}
+
+.social-btn.twitter img {
+  width: 30px; /* Aseguramos que el ícono tenga un tamaño adecuado */
+  height: 30px; /* El ícono debe tener altura y anchura iguales */
+  object-fit: contain; /* Asegura que el ícono no se deforme */
+}
+
+.social-btn.twitter:hover {
+  background-color: #1A91DA; /* Un tono más oscuro al hacer hover */
+}
+.social-btn.instagram:hover {
+  background-color: #C13584;
+}
+
+footer {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 2rem; /* Aumenté el padding para darle más espacio */
+  font-size: 1rem; /* Un tamaño de fuente más apropiado */
+  margin-top: 2rem; /* Agregar espacio superior para separar del contenido anterior */
+  width: 95%; /* Asegura que ocupe todo el ancho */
+}
+
+footer p {
+  margin: 1; /* Quitar margen para un diseño más limpio */
+  font-size: 0.9rem; /* Reducir un poco el tamaño del texto para que se vea bien */
+}
+
+.language-switcher {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+}
+
+.language-switcher button {
+  margin: 0 0.25rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #2E7D32;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.language-switcher button:hover {
+  background-color: #256428;
+}
+
+@media screen and (max-width: 768px) {
+  .plans, .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+}
