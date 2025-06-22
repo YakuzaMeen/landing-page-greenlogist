@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greenlogist - Logística Sostenible</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -31,56 +33,56 @@
     </style>
 </head>
 <body>
-<div class="language-switcher">
+<div class="language-switcher"data-aos="fade-left">
     <button onclick="changeLanguage('es')">ES</button>
     <button onclick="changeLanguage('en')">EN</button>
 </div>
-<header>
-    <div class="logo">
+<header data-aos="fade-down" data-aos-duration="1000">
+    <div class="logo" data-aos="fade-right" data-aos-delay="200">
         <img src="./img/logo.png" alt="Logo">
     </div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <nav>
-        
-            <a href="#inicio" data-es="Inicio" data-en="Home">Inicio</a>
-            <a href="#caracteristicas" data-es="Características" data-en="Features">Características</a>
-            <a href="#planes" data-es="Planes" data-en="Plans">Planes</a>
-            <a href="#be-greenlogist" data-es="Be Greenlogist" data-en="Be Greenlogist">Be Greenlogist</a>
-            <a href="#nosotros" data-es="Nosotros" data-en="About Us">Nosotros</a>
-            <a href="#como-funciona" data-es="Cómo Funciona" data-en="How It Works">Cómo Funciona</a>
-            <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+    <nav data-aos="fade-left" data-aos-delay="400">
+        <a href="#inicio" data-aos="fade-down" data-aos-delay="100">Inicio</a>
+        <a href="#caracteristicas" data-aos="fade-down" data-aos-delay="200">Características</a>
+        <a href="#planes" data-aos="fade-down" data-aos-delay="300">Planes</a>
+        <a href="#be-greenlogist" data-aos="fade-down" data-aos-delay="400">Be Greenlogist</a>
+        <a href="#nosotros" data-aos="fade-down" data-aos-delay="500">Nosotros</a>
+        <a href="#como-funciona" data-aos="fade-down" data-aos-delay="600">Cómo Funciona</a>
+        <a href="#contacto" data-aos="fade-down" data-aos-delay="700">Contacto</a>
     </nav>
 </header>
 
 
-<section id="inicio" class="hero">
-    <h2 data-es="Logística sostenible para productos orgánicos" data-en="Sustainable logistics for organic products">Logística sostenible para productos orgánicos</h2>
-    <p data-es="Conectamos a agricultores locales con negocios responsables a través de una plataforma tecnológica eficiente y ecológica." data-en="We connect local farmers with responsible businesses through an efficient and eco-friendly technology platform.">Conectamos a agricultores locales con negocios responsables a través de una plataforma tecnológica eficiente y ecológica.</p>
-    <button class="btn" data-es="Quiero Saber Más" data-en="Learn More">Quiero Saber Más</button>
+
+<section id="inicio" class="hero" data-aos="zoom-in" data-aos-duration="1200">
+    <h2 data-aos="fade-up" data-aos-delay="200" data-es="Logística sostenible para productos orgánicos" data-en="Sustainable logistics for organic products">Logística sostenible para productos orgánicos</h2>
+    <p data-aos="fade-up" data-aos-delay="400" data-es="Conectamos a agricultores locales con negocios responsables a través de una plataforma tecnológica eficiente y ecológica." data-en="We connect local farmers with responsible businesses through an efficient and eco-friendly technology platform.">Conectamos a agricultores locales con negocios responsables a través de una plataforma tecnológica eficiente y ecológica.</p>
+    <button class="btn" data-aos="fade-up" data-aos-delay="600" data-es="Quiero Saber Más" data-en="Learn More">Quiero Saber Más</button>
 </section>
 
-<section id="nosotros">
-    <h2 data-es="¿Qué es Greenlogist?" data-en="What is Greenlogist?">¿Qué es Greenlogist?</h2>
+<section id="nosotros" data-aos="fade-up">
+    <h2 data-aos="fade-up" data-es="¿Qué es Greenlogist?" data-en="What is Greenlogist?">¿Qué es Greenlogist?</h2>
     <div class="about-content">
-        <img src="img/greenlogist.png" alt="Concepto Greenlogist" class="about-image">
-        <p data-es="Greenlogist es una startup tecnológica dedicada a mejorar la eficiencia y sostenibilidad de la distribución de productos orgánicos en el Perú. Nuestra empresa ofrece una plataforma innovadora diseñada para optimizar el transporte entre pequeños agricultores locales y negocios como mercados, tiendas saludables y restaurantes eco-amigables." data-en="Greenlogist is a technology startup dedicated to improving the efficiency and sustainability of organic product distribution in Peru. Our company offers an innovative platform designed to optimize transportation between small local farmers and businesses such as markets, health stores, and eco-friendly restaurants.">Greenlogist es una startup tecnológica dedicada a mejorar la eficiencia y sostenibilidad de la distribución de productos orgánicos en el Perú. Nuestra empresa ofrece una plataforma innovadora diseñada para optimizar el transporte entre pequeños agricultores locales y negocios como mercados, tiendas saludables y restaurantes eco-amigables.</p>
+        <img src="img/greenlogist.png" alt="Concepto Greenlogist" class="about-image" data-aos="fade-right" data-aos-delay="200">
+        <p data-aos="fade-left" data-aos-delay="400" data-es="Greenlogist es una startup tecnológica dedicada a mejorar la eficiencia y sostenibilidad de la distribución de productos orgánicos en el Perú. Nuestra empresa ofrece una plataforma innovadora diseñada para optimizar el transporte entre pequeños agricultores locales y negocios como mercados, tiendas saludables y restaurantes eco-amigables." data-en="Greenlogist is a technology startup dedicated to improving the efficiency and sustainability of organic product distribution in Peru. Our company offers an innovative platform designed to optimize transportation between small local farmers and businesses such as markets, health stores, and eco-friendly restaurants.">Greenlogist es una startup tecnológica dedicada a mejorar la eficiencia y sostenibilidad de la distribución de productos orgánicos en el Perú. Nuestra empresa ofrece una plataforma innovadora diseñada para optimizar el transporte entre pequeños agricultores locales y negocios como mercados, tiendas saludables y restaurantes eco-amigables.</p>
     </div>
 </section>
 
-<section id="como-funciona">
-    <h2 data-es="¿Cómo funciona?" data-en="How does it work?">¿Cómo funciona?</h2>
-    <div class="features">
-        <div class="feature">
+<section id="como-funciona" data-aos="fade-up">
+    <h2 data-aos="fade-down" data-aos-delay="400" data-es="¿Cómo funciona?" data-en="How does it work?">¿Cómo funciona?</h2>
+    <div class="features" class="feature" data-aos="flip-left" data-aos-delay="200">
+        <div class="feature"data-aos="flip-left" data-aos-delay="200">
             <img src="img/register.png" alt="Icono de registro de agricultores" class="feature-img">
             <h3 data-es="Registro de agricultores" data-en="Farmer Registration">Registro de agricultores</h3>
             <p data-es="A través de un formulario sencillo y rápido, los agricultores pueden inscribirse y detallar los productos orgánicos que ofrecen." data-en="Through a simple and quick form, farmers can register and detail the organic products they offer.">A través de un formulario sencillo y rápido...</p>
         </div>
-        <div class="feature">
+        <div class="feature" class="feature" data-aos="flip-left" data-aos-delay="400">
             <img src="img/mapeo.png" alt="Icono de logística optimizada" class="feature-img">
             <h3 data-es="Logística optimizada" data-en="Optimized Logistics">Logística optimizada</h3>
             <p data-es="Una vez ingresados los productos y destinos, nuestro sistema inteligente calcula las rutas más eficientes y ecológicas." data-en="Once products and destinations are entered, our smart system calculates the most efficient and eco-friendly routes.">Una vez ingresados los productos y destinos...</p>
         </div>
-        <div class="feature">
+        <div class="feature"data-aos="flip-left" data-aos-delay="600">
             <img src="img/entrega_seguimiento.png" alt="Icono de entrega y seguimiento" class="feature-img">
             <h3 data-es="Entrega y seguimiento" data-en="Delivery and Tracking">Entrega y seguimiento</h3>
             <p data-es="Los negocios pueden seguir sus pedidos en tiempo real, desde la recolección en la granja hasta la entrega en su local." data-en="Businesses can track their orders in real-time, from farm pickup to delivery at their location.">Los negocios pueden seguir sus pedidos en tiempo real...</p>
@@ -181,5 +183,16 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        once: false,
+        offset: 100,
+        easing: 'ease-in-out',
+        delay: 100
+    });
+</script>
+
+
 </body>
 </html>

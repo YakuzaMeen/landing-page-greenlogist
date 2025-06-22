@@ -734,8 +734,13 @@ p {
       width: 120px; /* Tamaño más pequeño para móviles */
     }
   }
-  
-  
+
+  [data-aos] {
+    visibility: hidden;
+  }
+  [data-aos].aos-animate {
+    visibility: visible;
+  }
   /* hola xd*/
 }
 
