@@ -1,165 +1,343 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #F5F5DC;
-  color: #212121;
+  background-color: #F5F5DC; /* Un color crema suave */
+  color: #212121; /* Texto oscuro para contraste */
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  scroll-behavior: smooth; /* Desplazamiento suave para los enlaces de anclaje */
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   color: #212121;
+  margin-bottom: 1rem;
 }
 
+/* --- HEADER Y NAVEGACIÓN --- */
 header {
-  background-color: #4CAF50;
+  background-color: #4CAF50; /* Verde principal */
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada para un efecto flotante */
+  position: sticky; /* Hace que el header se mantenga en la parte superior al hacer scroll */
+  top: 0;
+  z-index: 1000; /* Asegura que esté por encima de otros contenidos */
+}
+
+header h1 {
+  color: white;
+  margin: 0;
+  font-size: 2.2rem; /* Tamaño de fuente un poco más grande para el logo */
+  letter-spacing: 1px; /* Espaciado entre letras para Greenlogist */
+}
+
+nav {
+  display: flex;
   flex-wrap: wrap;
+  justify-content: center; /* Centrar enlaces si hay muchos o en móvil */
+  align-items: center;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 0 0.75rem;
+  margin: 0 1.2rem; /* Más espacio entre los enlaces */
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem; /* Tamaño de fuente ligeramente más grande */
+  padding: 0.5rem 0; /* Padding vertical para el área de clic y el efecto */
+  position: relative; /* Necesario para el pseudo-elemento */
+  overflow: hidden; /* Asegura que el efecto no se salga */
+  transition: color 0.3s ease; /* Transición suave para el color del texto */
+}
+
+/* Efecto de línea inferior animada al pasar el ratón en la navegación */
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; /* Alinéalo con la parte inferior del padding */
+  left: 0;
+  width: 100%;
+  height: 3px; /* Línea más gruesa */
+  background-color: #A5D6A7; /* Un verde más claro para el efecto de resaltado */
+  transform: scaleX(0); /* Inicialmente invisible (escala a 0 en X) */
+  transform-origin: bottom right; /* Origen de la transformación para un efecto desde la derecha */
+  transition: transform 0.3s ease-out; /* Transición suave para la animación */
+}
+
+nav a:hover::after {
+  transform: scaleX(1); /* Se expande para aparecer al 100% */
+  transform-origin: bottom left; /* Cambia el origen al expandirse */
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #E8F5E9; /* Un blanco muy suave al pasar el ratón para un sutil resaltado */
 }
 
-.hero {
-  text-align: center;
-  padding: 4rem 2rem;
-  background-color: #E0E0E0;
+/* Estilo para el language-switcher */
+.language-switcher {
+  position: fixed;
+  top: 1.5rem; /* Un poco más abajo */
+  right: 1.5rem; /* Un poco más a la derecha */
+  z-index: 1001; /* Asegura que esté por encima del header fijo */
+  display: flex; /* Para alinear los botones */
+  gap: 0.5rem; /* Espacio entre los botones ES/EN */
 }
 
-.btn {
+.language-switcher button {
+  padding: 0.6rem 1rem; /* Más padding para que los botones sean más fáciles de cliquear */
   background-color: #2E7D32;
-  color: white;
+  color: #fff;
   border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 6px;
-  font-size: 1rem;
+  border-radius: 5px; /* Bordes ligeramente más redondeados */
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem; /* Tamaño de fuente un poco más legible */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.language-switcher button:hover {
+  background-color: #256428;
+  transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+/* --- SECCIONES GENERALES --- */
+.btn {
+  background-color: #2E7D32; /* Verde más oscuro para botones */
+  color: white;
+  border: none;
+  padding: 0.9rem 1.8rem; /* Padding ligeramente mayor */
+  border-radius: 6px;
+  font-size: 1.1rem; /* Fuente más grande */
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones para hover */
 }
 
 .btn:hover {
-  background-color: #256428;
+  background-color: #256428; /* Verde más oscuro al hover */
+  transform: translateY(-2px); /* Pequeño efecto de elevación */
 }
 
 section {
-  padding: 3rem 2rem;
+  padding: 4rem 2rem; /* Más padding para todas las secciones */
   border-bottom: 1px solid #E0E0E0;
+  text-align: center; /* Centrar contenido de las secciones por defecto */
 }
 
-.plans {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-around;
+section:last-of-type {
+  border-bottom: none; /* Eliminar el borde inferior de la última sección */
 }
 
-.plan {
-  background-color: #FFFFFF;
-  border: 1px solid #E0E0E0;
-  border-radius: 8px;
-  padding: 2rem;
-  flex: 1 1 250px;
-  max-width: 300px;
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+section p {
+  max-width: 800px; /* Limita el ancho del texto para mejor lectura */
+  margin: 1rem auto 2rem auto; /* Centra el párrafo y añade margen inferior */
+}
+
+/* --- SECCIÓN HERO --- */
+.hero {
   text-align: center;
-}
-.price {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #4CAF50;
-  margin-top: 1rem;
+  padding: 5rem 2rem;
+  color: #212121;
+
+  /* Estilos para la imagen de fondo */
+  background-image: url('img/fondo_grande.png'); /* Ruta a tu imagen de fondo grande */
+  background-size: cover; /* Cubre todo el área sin repetir */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  color: white; /* Cambia el color del texto para que contraste con la imagen */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra al texto para mayor legibilidad */
+  position: relative; /* ¡Importante para el pseudo-elemento ::before! */
+  overflow: hidden; /* Para contener el pseudo-elemento */
+  background-attachment: fixed; /* Efecto Parallax */
 }
 
-form {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: #FFFFFF;
-  border: 1px solid #E0E0E0;
+/* Oscurecer la imagen de fondo para mejorar la legibilidad del texto */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Capa semi-transparente oscura */
+  z-index: -1; /* Detrás del contenido */
+}
+
+.hero h2, .hero p {
+  color: white; /* Asegúrate de que el texto dentro del hero sea blanco si el fondo es oscuro */
+}
+
+/* --- SECCIÓN NOSOTROS --- */
+.about-content {
+  display: flex;
+  flex-direction: column; /* Columnas por defecto para móviles */
+  align-items: center;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left; /* Alinea el texto a la izquierda dentro de este div */
+}
+
+.about-image {
+  max-width: 100%;
+  width: 400px; /* Ajusta este tamaño si es necesario */
+  height: auto;
   border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 0.8rem;
-  font-size: 1rem;
-  border: 1px solid #E0E0E0;
-  border-radius: 4px;
-}
-
-input[type="email"], input[type="text"], input[type="tel"], textarea {
-  margin-bottom: 1rem;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-button[type="submit"] {
-  margin-top: 1rem;
-  width: 100%;
-  padding: 1rem;
-  background-color: #2E7D32;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-button[type="submit"]:hover {
-  background-color: #256428;
-}
-
+/* --- SECCIÓN CÓMO FUNCIONA (FEATURES) --- */
 .features {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  justify-content: space-around;
+  justify-content: center; /* Centrar las tarjetas */
+  margin-top: 2rem;
 }
 
 .feature {
   background-color: #FFFFFF;
   border: 1px solid #E0E0E0;
   border-radius: 8px;
-  padding: 2rem;
-  flex: 1 1 250px;
-  max-width: 300px;
+  padding: 2.5rem; /* Más padding */
+  flex: 1 1 280px; /* Ajuste para tarjetas */
+  max-width: 320px; /* Ancho máximo para cada tarjeta */
   text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones para hover */
 }
 
-.feature-icon {
-  font-size: 2rem;
+.feature:hover {
+  transform: translateY(-8px); /* Efecto de elevación más notable */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra más intensa al hover */
+}
+
+.feature-img {
+  max-width: 100px; /* Tamaño máximo para los iconos de las características */
+  height: auto;
   margin-bottom: 1rem;
 }
+
+/* --- SECCIÓN PLANES --- */
+.plans {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center; /* Centrar las tarjetas */
+  margin-top: 2rem;
+}
+
+.plan {
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 2.5rem; /* Más padding */
+  flex: 1 1 280px; /* Ajuste para tarjetas */
+  max-width: 320px; /* Ancho máximo para cada tarjeta */
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones para hover */
+}
+
+.plan:hover {
+  transform: translateY(-8px); /* Efecto de elevación más notable */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra más intensa al hover */
+}
+
+.price {
+  font-size: 1.5rem; /* Precio más grande */
+  font-weight: bold;
+  color: #4CAF50;
+  margin-top: 1.5rem;
+}
+
+/* --- SECCIÓN BE GREENLOGIST --- */
+.be-greenlogist-image {
+  max-width: 100%;
+  width: 500px; /* Tamaño para la imagen de be_greenlogist */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem; /* Espacio debajo de la imagen */
+}
+
+/* Formulario: Con estilos mejorados */
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 3rem; /* Más padding */
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px; /* Bordes más redondeados */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra para el formulario */
+}
+
+.form-group {
+  margin-bottom: 1.8rem; /* Más espacio entre grupos de formulario */
+  text-align: left; /* Alinea los labels a la izquierda */
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.6rem; /* Más espacio entre label y input */
+  font-size: 1.05rem; /* Fuente ligeramente más grande */
+  color: #333;
+}
+
+input, textarea {
+  width: calc(100% - 20px); /* Ajuste para padding */
+  padding: 0.9rem 10px; /* Padding ajustado */
+  font-size: 1rem;
+  border: 1px solid #CCCCCC; /* Borde más suave */
+  border-radius: 5px; /* Bordes ligeramente más redondeados */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transición al focus */
+}
+
+input:focus, textarea:focus {
+  border-color: #4CAF50; /* Resaltar al enfocar */
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2); /* Sombra suave al enfocar */
+  outline: none; /* Quitar el contorno predeterminado del navegador */
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px; /* Altura mínima del textarea */
+}
+
+button[type="submit"] {
+  margin-top: 2rem; /* Más espacio arriba del botón de envío */
+  width: 100%;
+  padding: 1.1rem; /* Más padding para el botón de envío */
+  background-color: #2E7D32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.15rem; /* Fuente más grande */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #256428;
+  transform: translateY(-2px);
+}
+
+/* --- SOCIAL BUTTONS (Flotantes) --- */
 .social-buttons {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 25px; /* Ligeramente más arriba */
+  right: 25px; /* Ligeramente más a la derecha */
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -167,98 +345,215 @@ button[type="submit"]:hover {
 }
 
 .social-btn {
-  margin: 5px;
-  width: 50px;
-  height: 50px;
+  margin: 7px; /* Más espacio entre botones */
+  width: 55px; /* Ligeramente más grandes */
+  height: 55px;
   background-color: #fff;
   border-radius: 50%;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15); /* Sombra más definida */
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 .social-btn img {
-  width: 30px;
-  height: 30px;
-}
-
-.social-btn:hover {
-  background-color: #f0f0f0;
-  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+  width: 32px; /* Imágenes ligeramente más grandes */
+  height: 32px;
+  object-fit: contain;
 }
 
 .social-btn.facebook:hover {
   background-color: #3b5998;
-}
-
-.social-btn.twitter {
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para el botón */
-}
-
-.social-btn.twitter img {
-  width: 30px; /* Aseguramos que el ícono tenga un tamaño adecuado */
-  height: 30px; /* El ícono debe tener altura y anchura iguales */
-  object-fit: contain; /* Asegura que el ícono no se deforme */
+  transform: translateY(-3px); /* Pequeño efecto de elevación */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25); /* Sombra más intensa al hover */
 }
 
 .social-btn.twitter:hover {
-  background-color: #1A91DA; /* Un tono más oscuro al hacer hover */
+  background-color: #1A91DA;
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
 }
 .social-btn.instagram:hover {
-  background-color: #C13584;
+  background-color: #C13584; /* Instagram purpura/rosa */
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
 }
 
+/* --- FOOTER --- */
 footer {
   background-color: #4CAF50;
   color: white;
   text-align: center;
-  padding: 2rem; /* Aumenté el padding para darle más espacio */
-  font-size: 1rem; /* Un tamaño de fuente más apropiado */
-  margin-top: 2rem; /* Agregar espacio superior para separar del contenido anterior */
-  width: 95%; /* Asegura que ocupe todo el ancho */
+  padding: 2.5rem; /* Más padding */
+  font-size: 1rem;
+  margin-top: 3rem; /* Más espacio superior */
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total */
 }
 
 footer p {
-  margin: 1; /* Quitar margen para un diseño más limpio */
-  font-size: 0.9rem; /* Reducir un poco el tamaño del texto para que se vea bien */
+  margin: 0; /* Quitar margen para un diseño más limpio */
+  font-size: 0.95rem; /* Un tamaño de texto ligeramente más grande */
 }
 
-.language-switcher {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 999;
+/* --- ANIMACIONES (Fade-in al scroll) --- */
+.fade-in {
+  opacity: 0; /* Inicialmente invisible */
+  transform: translateY(20px); /* Un poco hacia abajo */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave */
 }
 
-.language-switcher button {
-  margin: 0 0.25rem;
-  padding: 0.4rem 0.8rem;
-  background-color: #2E7D32;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
+.fade-in-visible {
+  opacity: 1; /* Completamente visible */
+  transform: translateY(0); /* Vuelve a su posición original */
 }
 
-.language-switcher button:hover {
-  background-color: #256428;
-}
+/* Ajusta los tiempos para un efecto escalonado si hay varios */
+/* Esto hará que las tarjetas de features y plans aparezcan con un pequeño retraso entre sí */
+.feature:nth-child(1), .plan:nth-child(1) { transition-delay: 0.1s; }
+.feature:nth-child(2), .plan:nth-child(2) { transition-delay: 0.2s; }
+.feature:nth-child(3), .plan:nth-child(3) { transition-delay: 0.3s; }
 
+
+/* --- MEDIA QUERIES (Responsive Design) --- */
 @media screen and (max-width: 768px) {
-  .plans, .features {
-    flex-direction: column;
-    align-items: center;
-  }
-
   header {
     flex-direction: column;
-    text-align: center;
+    padding: 1rem; /* Menos padding en pantallas pequeñas */
+    align-items: flex-start; /* Alinear elementos a la izquierda en móvil */
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem; /* Pequeño margen inferior */
   }
 
   nav {
-    margin-top: 1rem;
+    flex-direction: column; /* Apilar los enlaces verticalmente */
+    align-items: flex-start; /* Alinear enlaces a la izquierda */
+    width: 100%; /* Ocupar todo el ancho */
+  }
+
+  nav a {
+    margin: 0.5rem 0; /* Más espacio vertical entre enlaces apilados */
+    font-size: 1rem;
+    width: fit-content; /* El ancho del enlace se ajusta a su contenido */
+  }
+
+  nav a::after {
+    height: 2px; /* Línea más fina en móvil */
+  }
+
+  .language-switcher {
+    position: static; /* No fijo en móvil si el header se apila */
+    margin-top: 1rem; /* Separarlo de la navegación apilada */
+    align-self: flex-end; /* Alinearlo a la derecha si es parte del flujo normal */
+    gap: 0.3rem; /* Menos espacio entre botones en móvil */
+    top: auto; /* Resetear posición fija */
+    right: auto; /* Resetear posición fija */
+  }
+
+  .language-switcher button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 3rem 1.5rem;
+  }
+
+  section h2 {
+    font-size: 1.7rem;
+  }
+
+  .plans, .features {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; /* Menos espacio entre tarjetas en móvil */
+  }
+
+  .plan, .feature {
+    max-width: 90%; /* Ocupa más ancho en móvil */
+    padding: 2rem;
+  }
+
+  /* Responsive para imágenes específicas */
+  .about-image, .be-greenlogist-image {
+    width: 100%; 
+    max-width: 300px; 
+  }
+  .feature-img {
+    max-width: 80px; 
+  }
+
+  form {
+    padding: 2.5rem 1.5rem;
+    margin: 1.5rem auto;
+  }
+
+  input, textarea {
+    padding: 0.8rem 10px;
+  }
+
+  button[type="submit"] {
+    padding: 1rem;
+    font-size: 1.05rem;
+  }
+
+  .social-buttons {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .social-btn {
+    width: 45px;
+    height: 45px;
+    margin: 5px;
+  }
+
+  .social-btn img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .language-switcher {
+    position: fixed; 
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 1002; 
+  }
+}
+
+/* Estilos para la imagen de Características */
+.caracteristicas-img {
+  max-width: 100%;
+  width: 400px; 
+  height: auto;
+  display: block; 
+  margin: 1rem auto 2rem auto; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+@media screen and (max-width: 768px) {
+  .caracteristicas-img {
+    width: 90%; 
   }
 }
