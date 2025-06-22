@@ -6,6 +6,7 @@ body {
   padding: 0;
   line-height: 1.6;
   scroll-behavior: smooth; /* Desplazamiento suave para los enlaces de anclaje */
+  padding-top: 80px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -16,17 +17,35 @@ h1, h2, h3, h4, h5, h6 {
 
 /* --- HEADER Y NAVEGACIÓN --- */
 header {
-  background-color: #4CAF50; /* Verde principal */
-  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #4CAF50;
+  padding: 15px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada para un efecto flotante */
-  position: sticky; /* Hace que el header se mantenga en la parte superior al hacer scroll */
-  top: 0;
-  z-index: 1000; /* Asegura que esté por encima de otros contenidos */
+  width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
+
+
+/* Efecto al hacer scroll */
+header.scrolled {
+  padding: 10px 5%;
+  background-color: rgba(76, 175, 80, 0.95); /* Verde semi-transparente */
+  backdrop-filter: blur(10px);
+}
+
+.logo img {
+  width: 90px; /* Tamaño más equilibrado para desktop */
+  height: auto;
+  object-fit: contain;
+}
+
 
 header h1 {
   color: white;
@@ -37,23 +56,31 @@ header h1 {
 
 nav {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Centrar enlaces si hay muchos o en móvil */
   align-items: center;
+  gap: 15px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 10px 0;
 }
+
+nav::-webkit-scrollbar {
+  display: none;
+}
+
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 0 1.2rem; /* Más espacio entre los enlaces */
-  font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.05rem; /* Tamaño de fuente ligeramente más grande */
-  padding: 0.5rem 0; /* Padding vertical para el área de clic y el efecto */
-  position: relative; /* Necesario para el pseudo-elemento */
-  overflow: hidden; /* Asegura que el efecto no se salga */
-  transition: color 0.3s ease; /* Transición suave para el color del texto */
+  padding: 8px 12px;
+  white-space: nowrap;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: 4px;
 }
+
 
 /* Efecto de línea inferior animada al pasar el ratón en la navegación */
 nav a::after {
@@ -75,8 +102,9 @@ nav a:hover::after {
 }
 
 nav a:hover {
-  color: #E8F5E9; /* Un blanco muy suave al pasar el ratón para un sutil resaltado */
+  background-color: rgba(255, 255, 255, 0.1);
 }
+
 
 /* Estilo para el language-switcher */
 .language-switcher {
@@ -530,7 +558,31 @@ footer p {
   }
 }
 
+/* Para móviles (hasta 768px) */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
 
+  /* Ajusta el menú de navegación */
+  nav {
+    flex-direction: column;
+  }
+
+  /* Hace las imágenes responsivas */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Para tablets (768px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+}
 @media screen and (max-width: 480px) {
   .language-switcher {
     position: fixed; 
@@ -557,3 +609,133 @@ footer p {
     width: 90%; 
   }
 }
+
+
+/* Usa rem o em para tipografía */
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Usa porcentajes o vw/vh para contenedores */
+.section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* En móviles, los elementos ocupan todo el ancho */
+@media screen and (max-width: 768px) {
+  .container > div {
+    flex: 1 1 100%;
+  }
+}
+
+/* En desktop, los elementos se distribuyen en columnas */
+@media screen and (min-width: 769px) {
+  .container > div {
+    flex: 1 1 calc(33.333% - 20px);
+  }
+}
+
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Menú hamburguesa para móviles */
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Oculta el menú normal */
+  }
+
+  .nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #fff;
+  }
+
+  .hamburger-menu {
+    display: block; /* Muestra el botón de menú */
+  }
+}
+
+
+/* Estilos para el botón hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Media query para móviles */
+@media screen and (max-width: 768px) {
+  header {
+    padding: 10px;
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none; /* Oculta el menú por defecto en móviles */
+    position: absolute;
+    top: 100%; /* Lo coloca debajo del header */
+    left: 0;
+    right: 0;
+    background-color: #161616;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  nav.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo img {
+    width: 200px; /* Tamaño para desktop */
+    height: auto;
+  }
+
+  /* Ajustes para diferentes tamaños de pantalla */
+  @media screen and (max-width: 768px) {
+    .logo img {
+      width: 120px; /* Tamaño más pequeño para móviles */
+    }
+  }
+  
+  
+  /* hola xd*/
+}
+

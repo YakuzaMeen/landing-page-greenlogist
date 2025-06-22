@@ -65,3 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
         this.classList.toggle('active');
     });
 });
+
+    function toggleMenu() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('active');
+}
